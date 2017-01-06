@@ -17,11 +17,7 @@ export default {
         const opts = Object.assign(options);
         for (let key in opts) {
             if (opts.hasOwnProperty(key)) {
-                if (key === 'expires') {
-                    opts.expires = +opts.expires;
-                } else {
-                    opts[key] = '' + opts[key];
-                }
+                opts[key] = '' + opts[key];
             }
         }
 

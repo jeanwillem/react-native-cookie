@@ -16,7 +16,9 @@ export default {
     set(url:String, name: String, value: any, options?: Object = {}): Promise {
         const opts = Object.assign(options);
         for (let key in opts) {
-            if (opts.hasOwnProperty(key)) {
+            if (key === 'expires') {
+                opts.expires = opts.expires.toUTCString();
+            } else {
                 opts[key] = '' + opts[key];
             }
         }

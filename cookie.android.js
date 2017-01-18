@@ -15,6 +15,11 @@ export default {
     },
 
     set(url:String, name: String, value: any, options?: Object): Promise {
+        // pass an encode method that does nothing. cookie.serialize() breaks our cookie value.
+        options.encode = function(str) {
+          return str;
+        };
+
         return NativeModules.RNCookieManager.setCookie(url, cookie.serialize(name, value, options));
     },
 

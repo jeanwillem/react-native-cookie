@@ -17,7 +17,7 @@ export default {
         const opts = Object.assign(options);
         for (let key in opts) {
             if (key === 'expires') {
-                opts.expires = opts.expires.toUTCString();
+                opts.expires = opts.expires.getTime();
             } else {
                 opts[key] = '' + opts[key];
             }

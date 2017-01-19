@@ -44,7 +44,7 @@ RCT_EXPORT_METHOD(setCookie:(NSURL *) url
     
     NSNumber *expires = [RCTConvert NSNumber:props[@"expires"]];
     if (expires) {
-        [cookieProperties setObject:[NSDate dateWithTimeIntervalSince1970:([expires integerValue] / 1000)] forKey:NSHTTPCookieExpires];
+        [cookieProperties setObject:[NSDate dateWithTimeIntervalSince1970:([expires longLongValue] / 1000)] forKey:NSHTTPCookieExpires];
     };
     
     NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieProperties];

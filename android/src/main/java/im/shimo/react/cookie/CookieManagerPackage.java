@@ -12,20 +12,20 @@ import java.util.Collections;
 import java.util.List;
 
 public class CookieManagerPackage implements ReactPackage {
-    @Override
-    public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext) {
-        List<NativeModule> modules = new ArrayList<>();
-        modules.add(new CookieManagerModule(reactApplicationContext));
-        return modules;
-    }
+  @Override
+  public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext) {
+    List<NativeModule> modules = new ArrayList<>();
+    modules.add(new CookieManagerModule(reactApplicationContext));
+    return modules;
+  }
 
-    @Override
-    public List<ViewManager> createViewManagers(ReactApplicationContext reactApplicationContext) {
-        return Collections.emptyList();
-    }
+  @Override
+  public List<ViewManager> createViewManagers(ReactApplicationContext reactApplicationContext) {
+    return Collections.emptyList();
+  }
 
-    @Override
-    public List<Class<? extends JavaScriptModule>> createJSModules() {
-        return Collections.emptyList();
-    }
+  // Deprecated RN 0.47
+  public List<Class<? extends JavaScriptModule>> createJSModules() {
+    return Collections.emptyList();
+  }
 }
